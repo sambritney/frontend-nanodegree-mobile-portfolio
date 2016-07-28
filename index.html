@@ -82,9 +82,8 @@ header p span {
 (function(u,s){!function(e){"use strict";var n=function(n,t,o){var l,r=e.document,i=r.createElement("link");if(t)l=t;else{var a=(r.body||r.getElementsByTagName("head")[0]).childNodes;l=a[a.length-1]}var d=r.styleSheets;i.rel="stylesheet",i.href=n,i.media="only x",l.parentNode.insertBefore(i,t?l:l.nextSibling);var f=function(e){for(var n=i.href,t=d.length;t--;)if(d[t].href===n)return e();setTimeout(function(){f(e)})};return i.onloadcssdefined=f,f(function(){i.media=o||"all"}),i};"undefined"!=typeof module?module.exports=n:e.loadCSS=n}("undefined"!=typeof global?global:this);for(var i in u){loadCSS(u[i],s);}}(['//fonts.googleapis.com/css?family=Open+Sans:400,700','css/style.css','css/print.css'],document.getElementById("loadcss")));
 </script>
 <noscript>
-<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<link href="css/print.css" rel="stylesheet">
+<link href="css/print.css" rel="stylesheet" media="print">
 </noscript>
 
     
@@ -140,6 +139,20 @@ header p span {
           </li>
         </ul>
       </div>
+
+      <script>
+        WebFontConfig = {
+            google: {
+            families: ["Open Sans:400,700"]
+            }
+         };
+
+         (function(d) {
+            var wf = d.createElement('script'), s = d.scripts[0];
+            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+            s.parentNode.insertBefore(wf, s);
+         })(document);
+      </script>
 
       <footer>
         <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
