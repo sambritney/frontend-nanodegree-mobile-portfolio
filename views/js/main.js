@@ -451,10 +451,13 @@ var resizePizzas = function(size) {
 var container = document.getElementsByClassName("randomPizzaContainer");
 
   function changePizzaSizes(size) {
-    for (var i = 0; i < container.length; i++) {
-      var dx = determineDx(container[i], size);
-      var newwidth = (container[i].offsetWidth + dx) + 'px';
-      container[i].style.width = newwidth;
+    //Moved variables outside of for loop
+    var i = 0;
+    var dx = determineDx(container[i], size);
+    var newwidth = (container[i].offsetWidth + dx) + 'px';
+
+    for (var i; i < container.length; i++) {
+      container[i].style.width = newwidth;     
     }
   }
 
@@ -517,8 +520,9 @@ function updatePositions() {
   for (var i = 0; i <items.length; i++) {
     var phase = phaseArray[i % 5];
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-    //items[i].style.transform = 'translateX(items[i] + 100 + phase + "px")';
-  }
+    //items[i].style.transform = 'translateX(' + items[i].basicLeft + 100 * phase + 'px' + ')';
+   }
+
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
