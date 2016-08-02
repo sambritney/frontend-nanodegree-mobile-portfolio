@@ -34,7 +34,10 @@ form {
   width: 256px;
   z-index: -1;
   /** render pizzas in own layer*/
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 
 .randomPizzaContainer {
